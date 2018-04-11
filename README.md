@@ -77,4 +77,4 @@ $ docker run -v $ROOT:/myenv genomicsdb_querier:0.9.2-93da4b0-0.5 genomicsdb_que
 $ docker run genomicsdb_querier:0.9.2-93da4b0-0.5 ls /examples
 ```
 
-The docker images, vcf_importer, vcf_combiner, genomicsdb_querier, are published at https://hub.docker.com/u/intelhlsgenomicsdb/
+The docker images, "vcf_importer", "vcf_combiner", "genomicsdb_querier", are published at https://hub.docker.com/u/intelhlsgenomicsdb/
