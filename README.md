@@ -21,7 +21,9 @@ A single run of vcf2tiledb or gt_mpi_gather is a very simple task. However manag
 
 <a id="gdb_builder"></a>
 ### Docker for Building GenomicsDB Utilities
-Building GenomicsDB could be quite time consuming, see GenomicsDB wiki. The project offers scripts for building docker image and run the docker respectively. The created docker image is ready for building GenomicsDB utilities. Running the run script will launch a docker contain that pulls fresh source code from [GenomicsDB github repo](https://github.com/Intel-HLS/GenomicsDB) and builds the GenomicsDB utilities. By default, the container pulls from master branch. However it will pull code from the brach if a branch name is passed in. 
+This is a self-started project. Building GenomicsDB could be quite time consuming, see GenomicsDB wiki. The project offers scripts for building docker image and run the docker. The created docker image is ready for building GenomicsDB utilities. Running the run script will launch a docker contain that pulls fresh source code from [GenomicsDB github repo](https://github.com/Intel-HLS/GenomicsDB) and builds the GenomicsDB utilities. By default, the container pulls from master branch. However it will pull code from the brach if a branch name is passed in. 
+
+The docker image is published at https://hub.docker.com/r/intelhlsgenomicsdb/genomicsdb_builder/
 
 <a id="util_dockers"></a>
 ### Docker for Building GenomicsDB utilities and Dockers for GenomicsDB utilities
@@ -74,3 +76,5 @@ $ docker run -v $ROOT:/myenv genomicsdb_querier:0.9.2-93da4b0-0.5 genomicsdb_que
 ```
 $ docker run genomicsdb_querier:0.9.2-93da4b0-0.5 ls /examples
 ```
+
+The docker images, vcf_importer, vcf_combiner, genomicsdb_querier, are published at https://hub.docker.com/u/intelhlsgenomicsdb/
