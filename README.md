@@ -23,12 +23,14 @@ A single run of vcf2tiledb or gt_mpi_gather is a very simple task. However manag
 ### Docker for Building GenomicsDB Utilities
 This is a self-started project. Building GenomicsDB could be quite time consuming, see GenomicsDB wiki. The project offers scripts for building docker image and run the docker. The created docker image is ready for building GenomicsDB utilities. Running the run script will launch a docker contain that pulls fresh source code from [GenomicsDB github repo](https://github.com/Intel-HLS/GenomicsDB) and builds the GenomicsDB utilities. By default, the container pulls from master branch. However it will pull code from the brach if a branch name is passed in. 
 
-The docker image is published at see [github GenomicsDB branch GenomicsDB_dockers](https://github.com/Intel-HLS/GenomicsDB/tree/GenomicsDB_dockers/docker)
+The source code of making the docker could be found at GenomicsDB github branch "[GenomicsDB_dockers](https://github.com/Intel-HLS/GenomicsDB/tree/GenomicsDB_dockers/docker)"
+
+The docker image "genomicsdb_builder" is published at https://hub.docker.com/r/intelhlsgenomicsdb/genomicsdb_builder/.
 
 <a id="util_dockers"></a>
 ### Docker for Building GenomicsDB utilities and Dockers for GenomicsDB utilities
 
-Two GenomicsDB utility dockers are available: importer and querier, see [github GenomicsDB branch GenomicsDB_dockers](https://github.com/Intel-HLS/GenomicsDB/tree/GenomicsDB_dockers/docker).
+Two GenomicsDB utility dockers are available: importer and querier, see source code at GenomicsDB github branch "[GenomicsDB_dockers](https://github.com/Intel-HLS/GenomicsDB/tree/GenomicsDB_dockers/docker)"
 
 ##### How to build dockers
 To build importer docker, run:
@@ -77,4 +79,4 @@ $ docker run -v $ROOT:/myenv genomicsdb_querier:0.9.2-93da4b0-0.5 genomicsdb_que
 $ docker run genomicsdb_querier:0.9.2-93da4b0-0.5 ls /examples
 ```
 
-The docker images, "vcf_importer", "vcf_combiner", "genomicsdb_querier", are published at https://hub.docker.com/u/intelhlsgenomicsdb/
+The docker images, "vcf_importer", "vcf_combiner" and "genomicsdb_querier" are published at https://hub.docker.com/u/intelhlsgenomicsdb/
