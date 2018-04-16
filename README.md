@@ -4,20 +4,16 @@ Wrote the following projects:
 * [GenomicsDB Wrapping Dockers](#util_dockers)
 
 <a id='perf'></a>
-### GenomicsDB Performance Profiling
+### GenomicsDB-Benchmark
 
-GenomicsDB Profiler is a self-start project for profiling GenomicsDB performance, see GenomicsDB wiki at https://github.com/Intel-HLS/GenomicsDB.
+GenomicsDB Profiler, or Genomics-Benchmark as late name,d is a self-start project for profiling performance of GenomicsDB utillities, see GenomicsDB wiki at https://github.com/Intel-HLS/GenomicsDB for details about GenomicsDB utilities.
 
 ![png](images/gdb_profiler_all.jpg)
 
 The profiling targets are GenomicsDB utilities <b>‘vcf2tiledb’</b> (data loader) and <b>‘gt_mpi_gather’</b> 
-(data retriever). Both utilities require a json config file as input, see detals ay https://github.com/Intel-HLS/GenomicsDB. 
-The initial motivation was to automatically generate the labor-intense-to-craft JSON input files that were needed for finding the 
-optimal values for loader (vcf2tiledb) input parameters, such as various buffer sizes,  and combination of the parameters. 
-Over the time, the profiler has been improved to generate hundreds JSON configure files with various running configurations; launch 
-profiling on multiple nodes and visualize profiling results in various ways. 
+(data retriever). Both utilities require a json config file as input, see detals ay https://github.com/Intel-HLS/GenomicsDB. Initially the work was manually creating a config file then profile a GenomicsDB utility against the file. I created GenomicsDB Profiler that automatically generates different config files, then profile GenimicsDB utilities with the config files. I have profiled __2000+__ in a batch. Technically speaking, the number of runs in a batch is unlimited. GenomicsDB Profiler also has __visualization__ for profiling results, 2-D and 3-D results comparisons and query geno position distribution.
 
-A single run of vcf2tiledb or gt_mpi_gather is a very simple task. However managing thousands runs with similar configurations on many nodes become very challenging. A single run of vcf2tiledb often take hours. For efficience, the code needs to enable quick test, dry run, reuse existing DB, automatically process results and so on. To address all the issues, GenomicsDB Profiler has a complex name scheme for JSON configuration files and test result files to avoid conflicts and various mechanisn for quick testing. See [GenomicsDB Profiling Document](docs/GenomicsDBProfiling.pdf) for details. 
+A single run of vcf2tiledb or gt_mpi_gather is a very simple task. However managing thousands runs with similar configurations on many nodes become very challenging. To avoid conflicts, GenomicsDB Profiler has a complex name scheme for JSON configuration files, DB names and result file names. Because running the loader often takes hours, the code enable quick test, dry run, option of reuse existing DB, automatically process results and so on.
 
 <a id="gdb_builder"></a>
 ### Docker for Building GenomicsDB Utilities
