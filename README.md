@@ -13,7 +13,10 @@ GenomicsDB Profiler, or Genomics-Benchmark as late name,d is a self-start projec
 The profiling targets are GenomicsDB utilities <b>‘vcf2tiledb’</b> (data loader) and <b>‘gt_mpi_gather’</b> 
 (data retriever). Both utilities require a json config file as input, see detals ay https://github.com/Intel-HLS/GenomicsDB. Initially the work was manually creating a config file then profile a GenomicsDB utility against the file. I created GenomicsDB Profiler that automatically generates different config files, then profile GenimicsDB utilities with the config files. I have profiled __2000+__ in a batch. Technically speaking, the number of runs in a batch is unlimited. GenomicsDB Profiler also has __visualization__ for profiling results, 2-D and 3-D results comparisons and query geno position distribution.
 
-A single run of vcf2tiledb or gt_mpi_gather is a very simple task. However managing thousands runs with similar configurations on many nodes become very challenging. To avoid conflicts, GenomicsDB Profiler has a complex name scheme for JSON configuration files, DB names and result file names. Because running the loader often takes hours, the code enable quick test, dry run, option of reuse existing DB, automatically process results and so on.
+A single run of vcf2tiledb or gt_mpi_gather is a very simple task. However managing thousands runs with similar configurations on many nodes become very challenging. To avoid conflicts, GenomicsDB Profiler has a complex name scheme for JSON configuration files, DB names and result file names. Because running the loader often takes hours, the code enable quick test, dry run, option of reuse existing DB,
+automatically process results and so on.
+
+In addition to profiling GenomicsDB utilities, the profiler collects the system information and optionally collect process stats or/and IO stats data. 
 
 <a id="gdb_builder"></a>
 ### Docker for Building GenomicsDB Utilities
